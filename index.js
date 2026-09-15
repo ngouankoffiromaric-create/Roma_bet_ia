@@ -3,17 +3,20 @@ const TelegramBot = require("node-telegram-bot-api");
 const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
 
 bot.onText(/\/start/, (msg) => {
-  bot.sendMessage(msg.chat.id,
-`👋 Bienvenue sur ROMA BET IA 🇨🇮
-
-Choisis une commande :
-
-🎯 /ticket - Ticket Betclic du jour
-⚽ /score - Scores exacts
-🥅 /buteur - Buteurs probables
-🔥 /double - Les deux équipes marquent
-💎 /safe - Ticket sécurisé
-🚀 /grossecote - Grosse cote 10 à 20`);
+  bot.sendMessage(
+    msg.chat.id,
+    "👋 Bienvenue sur ROMA BET IA 🇨🇮\n\nChoisis une option ci-dessous 👇",
+    {
+      reply_markup: {
+        keyboard: [
+          ["🎯 Ticket du jour", "💎 Grosse cote"],
+          ["⚽ Scores exacts", "👟 Buteurs"],
+          ["🔥 Les deux marquent", "🤖 DOMI IA"]
+        ],
+        resize_keyboard: true
+      }
+    }
+  );
 });
 
 bot.onText(/\/ticket/, (msg) => {
