@@ -84,6 +84,25 @@ bot.onText(/\/bonjour/, (msg) => {
     "👋 Salut mon frère ! DOMI V3 est bien en ligne 🇨🇮🔥"
   );
 });
+bot.onText(/\/domi/, (msg) => {
+  bot.sendMessage(msg.chat.id, `
+🇨🇮🔥 DOMI BET IA – Ticket du jour
+
+🎯 TICKET SÉCURISÉ
+✅ PSG gagne
+✅ Inter Milan ou Nul
+✅ Plus de 1,5 buts : Real Madrid – Atlético
+
+💎 TICKET COTE 10 À 20
+✅ Real Madrid gagne
+✅ Marseille gagne
+✅ Les deux équipes marquent : Newcastle – Tottenham
+✅ Plus de 2,5 buts : Juventus – Lazio
+
+📊 Confiance DOMI : 87%
+💰 Cote estimée : 14.80
+  `);
+});
 console.log("DOMI V2 est lancé !");
 
 
