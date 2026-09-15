@@ -80,3 +80,17 @@ bot.onText(/\/grossecote/, (msg) => {
 });
 
 console.log("DOMI V2 est lancé !");
+
+
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send("DOMI V2 est en ligne !");
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Serveur lancé sur le port ${PORT}`);
+});
+
