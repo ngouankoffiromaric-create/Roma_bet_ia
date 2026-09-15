@@ -78,7 +78,12 @@ bot.onText(/\/grossecote/, (msg) => {
 
 💰 Cote : 18.40`);
 });
-
+bot.onText(/\/bonjour/, (msg) => {
+  bot.sendMessage(
+    msg.chat.id,
+    "👋 Salut mon frère ! DOMI V3 est bien en ligne 🇨🇮🔥"
+  );
+});
 console.log("DOMI V2 est lancé !");
 
 
