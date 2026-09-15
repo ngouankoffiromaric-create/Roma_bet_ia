@@ -1,0 +1,12 @@
+{
+  "name": "roma_bet_ia",
+  "version": "1.0.0",
+  "description": "Bot Telegram de pronostics Betclic",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "node-telegram-bot-api": "^0.66.0"
+  }
+}
