@@ -1,7 +1,33 @@
 const TelegramBot = require("node-telegram-bot-api");
 
 const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
+bot.on("message", (msg) => {
+  const chatId = msg.chat.id;
 
+  if (msg.text === "🎯 Ticket du jour") {
+    bot.sendMessage(chatId, "🎯 TICKET BETCLIC DU JOUR\n\n✅ PSG gagne\n✅ Inter Milan gagne\n💰 Cote estimée : 12.80");
+  }
+
+  if (msg.text === "⚽ Scores exacts") {
+    bot.sendMessage(chatId, "⚽ SCORES EXACTS\n\nPSG 2-0\nInter 2-1\nReal Madrid 3-1 Atlético");
+  }
+
+  if (msg.text === "💰 Grosse cote") {
+    bot.sendMessage(chatId, "💰 GROSSE COTE BETCLIC\n\nCote estimée : 18.50");
+  }
+
+  if (msg.text === "👟 Buteurs") {
+    bot.sendMessage(chatId, "👟 BUTEURS\n\nMbappé\nLautaro Martínez\nVinícius Jr");
+  }
+
+  if (msg.text === "🚩 Corners") {
+    bot.sendMessage(chatId, "🚩 CORNERS\n\nPSG +9\nReal Madrid +10");
+  }
+
+  if (msg.text === "✅ Les deux équipes marquent") {
+    bot.sendMessage(chatId, "✅ BTTS\n\nMarseille – Lyon\nReal Madrid – Atlético");
+  }
+});
 bot.onText(/\/start/, (msg) => {
   bot.sendMessage(
     msg.chat.id,
