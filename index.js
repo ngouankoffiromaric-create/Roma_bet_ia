@@ -2,8 +2,9 @@ const TelegramBot = require("node-telegram-bot-api");
 
 const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
 
-bot.command("start", (ctx) => {
-  ctx.reply(
+bot.onText(/\/start/, (msg) => {
+  bot.sendMessage(
+    msg.chat.id,
     "👋 Bienvenue sur ROMA BET IA 🇨🇮\n\nChoisis une option 👇",
     {
       reply_markup: {
